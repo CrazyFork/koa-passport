@@ -50,14 +50,14 @@ app.use(route.get('/', function(ctx) {
 }))
 
 app.use(route.post('/login',
-  passport.authenticate('local', {
+  passport.authenticate('local', {// use passport default behavior
     successRedirect: '/secured',
     failureRedirect: '/failed'
   })
 ))
 
 app.use(route.post('/custom', function(ctx, next) {
-  return passport.authenticate('local', function(user, info) {
+  return passport.authenticate('local', function(user, info) {// use customized authentication behavior
     if (user === false) {
       ctx.status = 401
       ctx.body = { success: false }

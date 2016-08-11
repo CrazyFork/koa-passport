@@ -1,0 +1,23 @@
+
+## depedencies
+  passport
+
+
+## Snnipets
+
+    // create session in koa2
+    let session
+    app.use(function(ctx, next) {
+      ctx.session = session = {}
+      return next()
+    })
+
+
+todos:
+  done:
+
+  pendings:
+    passport-local
+      how would u implementate it
+
+    how test run
